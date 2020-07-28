@@ -1,0 +1,236 @@
+body {
+	background-color: rgb(42, 42, 42);
+}
+
+:root {
+	--accent: rgb(81, 90, 114);
+}
+
+.App {
+	display: flex;
+	flex-direction: column;
+}
+
+/*------------------------------------------------------------- page header -----------*/
+
+.pageHeader {
+	width: 100vw;
+	height: 60px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	border-bottom: 2px solid var(--accent);
+	overflow-y: hidden;
+	overflow-x: scroll;
+}
+
+.pageTitle {
+	color: white;
+	margin: 0px 1vw 0px 1vw;
+	white-space: nowrap;
+	font-size: 120%;
+}
+
+.newFolder {
+	display: flex;
+	align-items: center;
+	padding: 0px 2vw 0px 1vw;
+	margin-left: auto;
+	border-right: 2px solid var(--accent);
+}
+
+.newLink {
+	display: flex;
+	align-items: center;
+	padding: 0px 1vw 0px 2vw;
+}
+
+.inputLabel {
+	color: white;
+	font-size: 120%;
+	white-space: nowrap;
+	margin-right: 10px;
+}
+
+.inputField {
+	border: 2px solid var(--accent);
+	background: none;
+	font-size: 120%;
+	border-radius: 5px;
+	margin: 0px 5px 0px 5px;
+	color: white;
+}
+
+.inputButton {
+	font-size: 120%;
+	border: 2px solid var(--accent);
+	background: none;
+	border-radius: 5px;
+	color: white;
+}
+
+.inputButton:hover {
+	cursor: pointer;
+}
+
+.pageBody {
+	display: flex;
+}
+
+/*------------------------------------------------------------------ directory window -----------*/
+
+.directory {
+	width: 35vw;
+	height: calc(100vh - 72px);
+	padding: 10px 10px 0px 10px;
+	display: flex;
+	flex-direction: column;
+	border-right: 2px solid var(--accent);
+	overflow-y: scroll;
+}
+
+.folderContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.folderParent {
+	display: flex;
+	align-items: center;
+	margin: 2px;
+	padding: 5px;
+	border-radius: 8px;
+}
+
+.folderParent:hover {
+	background-color: var(--accent);
+	cursor: pointer;
+}
+
+.folderParent:hover .removeIcon {
+	cursor: default;
+	color: white;
+}
+
+.activeFolder {
+	background-color: var(--accent);
+	display: flex;
+	align-items: center;
+	margin: 2px;
+	padding: 5px;
+	border-radius: 8px;
+}
+
+.activeFolder:hover {
+	cursor: pointer;
+}
+
+.icon {
+	color: white;
+	font-size: 140%;
+	margin: 0px 10px 0px 10px;
+}
+
+.folderName {
+	color: white;
+	font-size: 140%;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	overflow-x: scroll;
+	margin-right: 15px;
+}
+
+.folderChildren {
+	margin-left: 40px;
+}
+
+/*---------------------------------------------------------- folder content window -------------------*/
+
+.folderContentRenderContainer {
+	/*------ container for entire right side of page, inside App.js component -----*/
+	width: 100%;
+	height: calc(100vh - 62px);
+}
+
+.folderContentContainer {
+	/*------ container of all list items, inside FolderContent.js component -----*/
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	overflow-y: scroll;
+	margin-top: 10px;
+}
+
+.listItem {
+	/*------ each item rendered on right side of page, whether link or folder -----*/
+	margin: 8px 16px 8px 16px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	border-bottom: 2px solid var(--accent);
+	border-radius: 3px;
+}
+
+.listItem:hover {
+	background-color: var(--accent);
+	cursor: pointer;
+}
+
+.listItemName {
+	color: white;
+	font-size: 140%;
+	margin-right: 30px;
+}
+
+.linkHidden {
+	visibility: hidden;
+}
+
+.linkText {
+	color: rgb(175, 255, 175);
+	font-style: italic;
+}
+
+.linkIcon {
+	font-size: 120%;
+	transform: rotate(90deg);
+	color: white;
+	margin: 0px 20px 0px 10px;
+}
+
+.listItem:hover .removeIcon {
+	cursor: default;
+	color: white;
+}
+
+.removeIcon {
+	font-size: 150%;
+	transform: rotate(90deg);
+	color: var(--accent);
+	margin-left: auto;
+	margin-right: 20px;
+}
+
+.removeIconOnActive {
+	font-size: 150%;
+	transform: rotate(90deg);
+	color: white;
+	margin-left: auto;
+	margin-right: 20px;
+}
+
+.noItemsContainer {
+	display: flex;
+	justify-content: center;
+	border-bottom: 2px solid var(--accent);
+	margin: 10px 30px 0px 30px;
+	padding-bottom: 10px;
+}
+
+.noItems {
+	font-size: 200%;
+	color: var(--accent);
+}
